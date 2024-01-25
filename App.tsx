@@ -15,6 +15,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Platform,
 } from 'react-native';
 
 import {
@@ -115,4 +116,15 @@ const styles = StyleSheet.create({
   },
 });
 
+
+//////////////////////////////
+StyleSheet.create({
+  root: {
+    ...Platform.select({
+      web: {height: '100vh'},
+      default: {height: '100%'},
+    }),
+  },
+});
+///////////////////////////////
 export default App;
